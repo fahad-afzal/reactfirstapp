@@ -27,18 +27,16 @@ jobs:
       with:
         node-version: 12
     
-    - uses: borales/actions-yarn@v2.0.0
+    - name: Github Action for yarn
+      uses: Borales/actions-yarn@v2.1.0
       with:
         cmd: install # will run `yarn install` command
     
-    - name: Yarn install cache
-      uses: c-hive/gha-yarn-cache@v1
-
-    - name: Build React App
+    - name: Creating Build
       run: yarn build
       
     - name: Install Surge
-      run: npm install --global surge
+      run: npm install -g surge
 
     - name: Deploy to Surge
       run: surge ./build rfirstapp.surge.sh --token ${{ secrets.SURGE_TOKEN }}
