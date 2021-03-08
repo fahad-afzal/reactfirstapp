@@ -1,8 +1,12 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Hello from "./Hello";
 
 function App() {
-  return <div>Hello from Fahad Afzal</div>;
+  return (
+    <div>
+      <Hello firstName="Fahad Afzal" />
+    </div>
+  );
 }
 
 export default App;
